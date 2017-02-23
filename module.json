@@ -1,0 +1,13 @@
+{
+    "id": "auto-follow",
+    "name": "Auto Follow",
+    "description": "Define an automatic following for new or existing users.",
+    "keywords": [
+        "files"
+    ],
+    "version": "1.0",
+    "humhub": {
+        "minVersion": "1.2"
+    },
+    "screenshots": []
+}
