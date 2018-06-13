@@ -8,6 +8,7 @@
 
 namespace humhub\modules\autofollow\models;
 
+use humhub\modules\content\components\ContentContainerActiveRecord;
 use Yii;
 use humhub\modules\user\models\User;
 
@@ -43,17 +44,19 @@ class ConfigureForm extends \yii\base\Model
         $module->settings->setSerialized('users', $this->users);
 
         if ($this->assignAll) {
+
             $follows = $module->getAutoFollows();
             foreach (User::find()->all() as $user) {
                 foreach ($follows as $follow) {
 
+                    /** @var ContentContainerActiveRecord $follow */
                     if ($follow instanceof \humhub\modules\space\models\Space) {
                         if ($follow->isMember($user->id)) {
                             continue;
                         }
                     }
 
-                    $follow->follow($user);
+                    $follow->follow($user, false);
                 }
             }
         }
