@@ -46,7 +46,7 @@ class ConfigureForm extends \yii\base\Model
         if ($this->assignAll) {
 
             $follows = $module->getAutoFollows();
-            foreach (User::find()->all() as $user) {
+            foreach (User::find()->active()->all() as $user) {
                 foreach ($follows as $follow) {
 
                     /** @var ContentContainerActiveRecord $follow */
