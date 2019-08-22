@@ -2,6 +2,7 @@
 
 namespace humhub\modules\autofollow;
 
+use humhub\modules\space\models\Space;
 use Yii;
 
 /**
@@ -18,7 +19,13 @@ class Events
         $module = Yii::$app->getModule('auto-follow');
 
         foreach ($module->getAutoFollows() as $container) {
+
+            if ($container instanceof Space && $container->isMember($user->id)) {
+                continue;
+            }
+
             $container->follow($user);
+
         }
     }
 
