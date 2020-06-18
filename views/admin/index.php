@@ -23,7 +23,7 @@ use humhub\modules\user\widgets\UserPickerField;
         </div>
         <div class="form-group">
             <?= Html::saveButton() ?>
-            <?= Html::a(Yii::t('base', 'Back'), '/admin/modules', ['class' => 'btn btn-default pull-right']); ?>
+            <?= Html::a(Yii::t('base', 'Back'), $prevPage, ['class' => 'btn btn-default pull-right']); ?>
         </div>
         <?php ActiveForm::end(); ?>
     </div>
