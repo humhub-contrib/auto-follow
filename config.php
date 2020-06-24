@@ -7,8 +7,7 @@ return [
     'class' => 'humhub\modules\autofollow\Module',
     'namespace' => 'humhub\modules\autofollow',
     'events' => [
-        
-        [User::className(), User::EVENT_AFTER_INSERT, ['humhub\modules\autofollow\Events', 'onAfterUserCreate']],        
+
+        [User::class, User::EVENT_AFTER_INSERT, ['humhub\modules\autofollow\Events', 'onAfterUserCreate']],
     ]
 ];
-?>
