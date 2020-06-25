@@ -17,8 +17,8 @@ use humhub\modules\user\widgets\UserPickerField;
 
         <?php $form = ActiveForm::begin(); ?>
         <div class="form-group">
-            <?= $form->field($model, 'spaces')->widget(SpacePickerField::className())->label(false); ?>
-            <?= $form->field($model, 'users')->widget(UserPickerField::className(), ['placeholderMore' => Yii::t('AutoFollowModule.setting', 'Add User')])->label(false); ?>
+            <?= $form->field($model, 'spaces')->widget(SpacePickerField::class)->label(false); ?>
+            <?= $form->field($model, 'users')->widget(UserPickerField::class, ['placeholderMore' => Yii::t('AutoFollowModule.setting', 'Add User')])->label(false); ?>
             <?= $form->field($model, 'assignAll')->checkbox(); ?>
         </div>
         <div class="form-group">
