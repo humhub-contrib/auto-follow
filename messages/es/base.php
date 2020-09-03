@@ -1,5 +1,4 @@
 <?php
-
-return [
-    '<strong>Auto</strong> follow configuration' => '',
-];
+return array (
+  '<strong>Auto</strong> follow configuration' => 'Configuración <strong>Auto</strong>-seguir',
+);
