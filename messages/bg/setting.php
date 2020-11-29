@@ -1,7 +1,6 @@
 <?php
-
-return [
-    'Add User' => '',
-    'Choose default spaces or users which are automatically followed by new users.' => '',
-    'Force following also for existing members' => '',
-];
+return array (
+  'Add User' => 'Добавяне на потребител',
+  'Choose default spaces or users which are automatically followed by new users.' => 'Изберете раздели по подразбиране или потребители, които автоматично се следват от нови потребители.',
+  'Force following also for existing members' => 'Принудително следване и за съществуващи членове',
+);
