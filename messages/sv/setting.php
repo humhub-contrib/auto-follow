@@ -1,7 +1,6 @@
 <?php
-
-return [
-    'Add User' => '',
-    'Choose default spaces or users which are automatically followed by new users.' => '',
-    'Force following also for existing members' => '',
-];
+return array (
+  'Add User' => 'Lägg till användare',
+  'Choose default spaces or users which are automatically followed by new users.' => 'Välj nätverk som standard eller användare som automatiskt följs av nya användare.',
+  'Force following also for existing members' => 'Tvinga även befintliga medlemmar "att följa"',
+);
