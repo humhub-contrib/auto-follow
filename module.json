@@ -6,9 +6,9 @@
     "files"
   ],
   "homepage": "https://github.com/humhub-contrib/auto-follow",
-  "version": "1.0.6",
+  "version": "1.1.0",
   "humhub": {
-    "minVersion": "1.2"
+    "minVersion": "1.17"
   },
   "screenshots": [
     "resources/Screen1.PNG"
