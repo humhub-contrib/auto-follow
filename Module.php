@@ -2,30 +2,25 @@
 
 namespace humhub\modules\autofollow;
 
-use Yii;
-use yii\helpers\Url;
 use humhub\modules\space\models\Space;
 use humhub\modules\user\models\User;
+use yii\helpers\Url;
 
 class Module extends \humhub\components\Module
 {
     /**
      * @inheritdoc
      */
-    public $resourcesPath = 'resources';
-    /**
-     * @inheritdoc
-     */
     public function getConfigUrl()
     {
         return Url::to([
-                    '/auto-follow/admin'
+            '/auto-follow/admin',
         ]);
     }
 
     /**
      * Returns currently defined followable records
-     * 
+     *
      * @return \humhub\modules\content\components\ContentContainerActiveRecord[] the automatic followable records
      */
     public function getAutoFollows()
