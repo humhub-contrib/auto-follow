@@ -1,8 +1,8 @@
 <?php
 
-use humhub\widgets\ActiveForm;
 use humhub\libs\Html;
 use humhub\modules\space\widgets\SpacePickerField;
+use humhub\modules\ui\form\widgets\ActiveForm;
 use humhub\modules\user\widgets\UserPickerField;
 ?>
 
