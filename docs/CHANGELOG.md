@@ -3,7 +3,7 @@ Changelog
 
 1.0.7  (Unreleased)
 -----------------------
-- Enh: Replace deprecated ActiveForm
+- Enh #7: Update Active Form for Bootstrap 5
 
 1.0.6  (August 22, 2019)
 -----------------------
