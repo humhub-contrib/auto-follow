@@ -1,6 +1,10 @@
 Changelog
 =========
 
+1.0.7  (Unreleased)
+-----------------------
+- Enh #7: Update Active Form for Bootstrap 5
+
 1.0.6  (August 22, 2019)
 -----------------------
 - Fix: Do not create follow for new members which are already space members
@@ -14,4 +18,3 @@ Changelog
 1.0.1  (June 13, 2018)
 -----------------------
 - Fix: Removed auto send notification on
-
