@@ -19,7 +19,6 @@ use humhub\modules\user\models\User;
  */
 class ConfigureForm extends \yii\base\Model
 {
-
     public $spaces;
     public $users;
     public $assignAll;
@@ -32,7 +31,7 @@ class ConfigureForm extends \yii\base\Model
         return [
             ['users', 'safe'],
             ['assignAll', 'boolean'],
-            ['spaces', 'safe']
+            ['spaces', 'safe'],
         ];
     }
 
@@ -67,7 +66,7 @@ class ConfigureForm extends \yii\base\Model
     public function attributeLabels()
     {
         return [
-            'assignAll' => Yii::t('AutoFollowModule.setting', 'Force following also for existing members')
+            'assignAll' => Yii::t('AutoFollowModule.setting', 'Force following also for existing members'),
         ];
     }
 

@@ -18,7 +18,6 @@ use Yii;
  */
 class AdminController extends \humhub\modules\admin\components\Controller
 {
-
     public function actionIndex()
     {
         $model = new ConfigureForm();
@@ -32,7 +31,7 @@ class AdminController extends \humhub\modules\admin\components\Controller
 
         return $this->render('index', [
             'model' => $model,
-            'prevPage' => $prevPage
+            'prevPage' => $prevPage,
         ]);
     }
 

@@ -9,5 +9,5 @@ return [
     'events' => [
 
         [User::class, User::EVENT_AFTER_INSERT, ['humhub\modules\autofollow\Events', 'onAfterUserCreate']],
-    ]
+    ],
 ];
