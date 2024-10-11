@@ -19,13 +19,13 @@ class Module extends \humhub\components\Module
     public function getConfigUrl()
     {
         return Url::to([
-                    '/auto-follow/admin'
+            '/auto-follow/admin',
         ]);
     }
 
     /**
      * Returns currently defined followable records
-     * 
+     *
      * @return \humhub\modules\content\components\ContentContainerActiveRecord[] the automatic followable records
      */
     public function getAutoFollows()
