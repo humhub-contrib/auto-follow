@@ -66,7 +66,7 @@ class ConfigureForm extends \yii\base\Model
     public function attributeLabels()
     {
         return [
-            'assignAll' => Yii::t('AutoFollowModule.setting', 'Force following also for existing members'),
+            'assignAll' => Yii::t('AutoFollowModule.base', 'Force following also for existing members'),
         ];
     }
 
