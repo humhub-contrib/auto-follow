@@ -5,6 +5,7 @@ Changelog
 -----------------------
 - Enh #7: Update Active Form for Bootstrap 5
 - Enh #8: Use PHP CS Fixer
+- Enh #9: Reduce translation message categories
 
 1.0.6  (August 22, 2019)
 -----------------------
