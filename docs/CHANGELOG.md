@@ -1,6 +1,10 @@
 Changelog
 =========
 
+1.1.0  (Unreleased)
+-----------------------
+- Enh #11: Migration to Bootstrap 5 for HumHub 1.18
+
 1.0.7  (Unreleased)
 -----------------------
 - Enh #7: Update Active Form for Bootstrap 5
