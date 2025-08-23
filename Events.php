@@ -12,7 +12,6 @@ use Yii;
  */
 class Events
 {
-
     public static function onAfterUserCreate($event)
     {
         $user = $event->sender;
