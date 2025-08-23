@@ -8,6 +8,7 @@
 
 namespace humhub\modules\autofollow\controllers;
 
+use humhub\modules\admin\components\Controller;
 use humhub\modules\autofollow\models\ConfigureForm;
 use Yii;
 
@@ -16,7 +17,7 @@ use Yii;
  *
  * @author Luke
  */
-class AdminController extends \humhub\modules\admin\components\Controller
+class AdminController extends Controller
 {
     public function actionIndex()
     {
@@ -27,11 +28,9 @@ class AdminController extends \humhub\modules\admin\components\Controller
             $this->view->saved();
         }
 
-        $prevPage = Yii::$app->request->referrer ?: Yii::$app->homeUrl;
-
         return $this->render('index', [
             'model' => $model,
-            'prevPage' => $prevPage,
+            'prevPageUrl' => Yii::$app->request->referrer ?: Yii::$app->homeUrl,
         ]);
     }
 
