@@ -30,7 +30,7 @@ class Module extends \humhub\components\Module
         $spaces = $this->settings->getSerialized('spaces');
         if ($spaces !== null && is_array($spaces)) {
             foreach ($spaces as $guid) {
-                $s = Space::findOne(['guid' => trim($guid)]);
+                $s = Space::findOne(['guid' => trim((string) $guid)]);
                 if ($s !== null) {
                     $follows[] = $s;
                 }
@@ -40,7 +40,7 @@ class Module extends \humhub\components\Module
         $users = $this->settings->getSerialized('users');
         if ($users !== null && is_array($users)) {
             foreach ($users as $guid) {
-                $u = User::findOne(['guid' => trim($guid)]);
+                $u = User::findOne(['guid' => trim((string) $guid)]);
                 if ($u !== null) {
                     $follows[] = $u;
                 }
