@@ -1,6 +1,10 @@
 Changelog
 =========
 
+1.1.1 (Unreleased)
+------------------
+- Fix #14: Private spaces followed by new and existing users; Disabled following of spaces and users ignored; New users followed with notifications, now without; Existing users assigned in one slow loop, now in SQL; Settings form not validated; Wrong keyword
+
 1.1.0  (August 23, 2025)
 ------------------------
 - Fix: Update module resources path
