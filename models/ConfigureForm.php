@@ -8,9 +8,10 @@
 
 namespace humhub\modules\autofollow\models;
 
-use humhub\modules\content\components\ContentContainerActiveRecord;
-use Yii;
+use humhub\components\behaviors\PolymorphicRelation;
+use humhub\modules\user\models\Follow;
 use humhub\modules\user\models\User;
+use Yii;
 
 /**
  * ConfigureForm
@@ -29,33 +30,38 @@ class ConfigureForm extends \yii\base\Model
     public function rules()
     {
         return [
-            ['users', 'safe'],
+            [['spaces', 'users'], 'default', 'value' => []],
+            [['spaces', 'users'], 'each', 'rule' => ['string']],
             ['assignAll', 'boolean'],
-            ['spaces', 'safe'],
         ];
     }
 
     public function save()
     {
+        if (!$this->validate()) {
+            return false;
+        }
 
         $module = Yii::$app->getModule('auto-follow');
         $module->settings->setSerialized('spaces', $this->spaces);
         $module->settings->setSerialized('users', $this->users);
 
         if ($this->assignAll) {
+            foreach ($module->getAutoFollows() as $follow) {
+                // Keep the notification setting, which the user could change for an existing follow
+                $followerIds = Follow::find()
+                    ->select('user_id')
+                    ->where(['object_model' => PolymorphicRelation::getObjectModel($follow)])
+                    ->andWhere(['object_id' => $follow->getPrimaryKey()]);
 
-            $follows = $module->getAutoFollows();
-            foreach (User::find()->active()->all() as $user) {
-                foreach ($follows as $follow) {
+                $userIds = User::find()
+                    ->active()
+                    ->select('user.id')
+                    ->andWhere(['NOT IN', 'user.id', $followerIds])
+                    ->column();
 
-                    /** @var ContentContainerActiveRecord $follow */
-                    if ($follow instanceof \humhub\modules\space\models\Space) {
-                        if ($follow->isMember($user->id)) {
-                            continue;
-                        }
-                    }
-
-                    $follow->follow($user, false);
+                foreach ($userIds as $userId) {
+                    $follow->follow($userId, false);
                 }
             }
         }
